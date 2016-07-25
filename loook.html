@@ -1,0 +1,1369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <meta charset="utf-8">
+        <title>WRAPP</title>
+        <meta name="generator" content="WRAPP" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Bootstrap How to make a simple wizard, workflow or sequence to steps using the Bootstrap tabs and the progress bar to show progress. example snippet f" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="wrappstyle.css">
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  >
+        
+        <div class="container" id="myWizard" ng-app="myApp" ng-controller="Main">
+  
+   <h1 id="title">Website Readiness Assessment & Planning Prototype</h1>
+  
+   <hr>
+  
+   <div class="progress">
+     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="9" style="width: 10%;">
+       Step 1 of 10
+     </div>
+   </div>
+  <div class="well" id="navy">
+   <div class="navbar">
+      <div class="navbar-inner">
+            <ul class="nav nav-tabs">
+               <li class="active"><a href="#step1" data-toggle="tab" data-step="1">Welcome</a></li>
+               <li><a href="#step2" data-toggle="tab" data-step="2">P1</a></li>
+               <li><a href="#step3" data-toggle="tab" data-step="3">P2</a></li>
+               <li><a href="#step4" data-toggle="tab" data-step="4">P3</a></li>
+               <li><a href="#step5" data-toggle="tab" data-step="5">P4</a></li>
+               <li><a href="#step6" data-toggle="tab" data-step="6">P5</a></li>
+               <li><a href="#step7" data-toggle="tab" data-step="7">P6</a></li>
+               <li><a href="#step8" data-toggle="tab" data-step="8">P7</a></li>
+               <li><a href="#step9" data-toggle="tab" data-step="9">P8</a></li>
+               <li><a href="#step10" data-toggle="tab" data-step="10">Results</a></li>
+            </ul>
+      </div>
+   </div>
+   </div>
+   <div class="tab-content">
+      <div class="tab-pane fade in active" id="step1">
+         
+        <div class="well">
+
+        <h1 class="ptitle">Welcome!</h1> 
+        <br>
+          
+<p id="instructions">Please answer the following questions to the best of your ability. Some questions may require the use of external tools or resources, for those of which a link and/or an abstract is provided. If there are any concerns or need for further clarification, please feel free to contact us at: <a href="mailto:bahteamwrapp@gmail.com">bahteamwrapp@gmail.com</a>.</p>
+
+<p id="important">To begin, identify the website's site offering and target audience demographics below. Please note that more than one checkbox may be chosen.
+</p>
+
+<br>
+<div class="formdivs" id="offerings">
+ 
+    <label>Site Offering(s):</label>
+    <br><input type="checkbox" ng-model="inforesource" name="offer" value="information/resources">Information/resources
+  <input type="checkbox" ng-model="formsfiling" name="offer" value="forms/filing">Forms/filing
+  <input type="checkbox" ng-model="ecommercetransaction" name="offer" value="ecommerce/transaction">E-commerce/transaction
+  <br><input type="checkbox" ng-model="jobscareers" name="offer" value="jobs/careers">Jobs/careers
+  <input type="checkbox" ng-model="informationportal" name="offer" value="information portal">Information Portal
+  <input type="checkbox" ng-model="communityportal" name="offer" value="communitybased portal">Community-based Portal
+
+
+ 
+</div>
+<br>
+<br>
+
+<div class="formdivs" id="demos">
+
+   <label>Target Audience Demographic(s):</label>
+  <br>
+  <p>
+  Please note that the target demographic is the audience website is aiming to reach, not necessarily the audience it currently engages.
+  </p>  
+
+  <br><input type="checkbox" ng-model="children" name="audiencedemo" value="Children">Children (17 & younger)
+  <input type="checkbox" ng-model="geny" name="audiencedemo" value="Gen Y">Gen Y (18-30)
+  <input type="checkbox" ng-model="genx" name="audiencedemo" value="Gen X">Gen X (31-60)
+  <br><input type="checkbox" ng-model="babyboomers" name="audiencedemo" value="Baby Boomers">Baby Boomers (61-75)
+  <input type="checkbox" ng-model="seniors" name="audiencedemo" Vaule="Seniors">Seniors (75+)
+  <input type="checkbox" ng-model="allages" name="audiencedemo" value="All Ages">All Ages
+
+
+  <script type ="text/javascript">
+ function WriteToFile() {
+
+    // var allVals = [];
+    // $('demos:checked').each(function() {
+    //   var i = 0;
+    //   allVals.push($(this).val(i));
+    //   alert($(allVals.val(i)));
+    //   i = i++;
+    // });
+
+
+alert($('input[name="audiencedemo"]:checked').val());
+};
+
+
+
+   
+  </script>
+<input type="button" name="check" onclick="WriteToFile()" value="Check"></input>
+</div>
+<br>
+<br>
+
+<div>
+
+Enter URL: <input type="text" ng-model="url" name="url" placeholder=" www." required>
+
+<br><br>
+
+Enter Email: <input type="text" ng-model="email" name="email" placeholder=" " required>
+
+<br><br>
+
+Enter Company/Agency's name:<input type="text" ng-model="name" name="name" placeholder=" " required>
+
+</div>
+            
+        </div>
+
+         <a class="btn btn-default next" href="" data-ng-click="goNext(1)">Continue</a>
+         <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step2" ng-submit="GoNext(2)">
+         <div class="well"> 
+          <h1 class="ptitle">Pillar 1 - Accessibility</h1>
+          <br>
+
+            <div class="formdivs" id="responsive">
+<h2>1.1 - Responsiveness</h2>
+
+  <p>The website's responsiveness score is: </p> THIS IS WHERE WE CALL THE SCORE
+</div>
+
+<div class="formdivs" id="multiling">
+<h2>1.2 - Multinational</h2>
+
+  <p>Does the website have a multilingual feature?</p>
+  <span>
+    <input type="radio" name="multiling" ng-model="multiling" required value="1.21">Yes
+    <input type="radio" name="multiling" ng-model="multiling" required value="1.22">No
+    </span>
+
+  <p>Does the website adapt metrics, timezone and/or date format to specific countries? (Please check all those that apply)</p>
+    <input type="checkbox" ng-model="metrics" name="adapt" value="1.23" required>Metrics
+    <input type="checkbox" ng-model="timezone" name="adapt" value="1.24">Timezone
+    <input type="checkbox" ng-model="date" name="adapt" value="1.25">Date Format
+    <input type="checkbox" ng-model="none" name="adapt" value="1.26">None
+
+</div>
+
+<div class="formdivs" id="browser">
+<h2>1.3 - Browser Compatibility</h2>
+
+  <p>How is the website's browser compatibility?</p>
+  <div class="answers">
+    <input type="radio" name="browser" ng-model="browsergreat" value="1.31" required>Great
+    <input type="radio" name="browser" ng-model="browsergood" value="1.32">Good
+    <input type="radio" name="browser" ng-model="browserbetter" value="1.33">Needs Improvement    <input type="radio" name="browser" ng-model="browserhorrible" value="1.34">Horrible
+</div>
+
+  <p class="caption">If unsure, please check this tool to determine the website's broswer compatibility: <a href="http://browsershots.org/" class="wrapplink">Browser Compatibility Tool</a></p> 
+
+  <br>
+  <p>
+  Browsershots makes screenshots of your web design in different operating systems and browsers. It is a free open-source online web application providing developers a convenient way to test their website's browser compatibility in one place. When you submit your web address, it will be added to the job queue. A number of distributed computers will open your website in their browser. Then they will make screenshots and upload them to our central dedicated server for your review.
+  </p>
+</div>
+
+<div class="formdivs" id="508">
+<h2>1.4 - 508 Compliance</h2>
+
+  <p>Does the website comply with all of the 508 Guidelines?</p>
+    <input type="radio" name="508" id="r1" ng-model="fiveyes" value="1.41" required>Yes
+    <input type="radio" name="508" ng-model="fiveno" value="1.42">No
+  <p class="caption">If unsure, please check this checklist to determine whether is does: <a href="https://pages.18f.gov/accessibility/checklist/" class="wrapplink">508 Guidelines</a></p>
+
+  <br>
+  <p>
+  Section 508 details the accessibility standards for federal websites so that all users, regardless of disability status, can access technology. 
+  </p>
+</div>
+<script type="text/javascript">
+function test() {
+    alert($('input[name="multiling"]:checked').val());
+    alert($('input[name="adapt"]:checked').val());
+    alert($('input[name="browser"]:checked').val());
+    alert($('input[name="508"]:checked').val());
+};
+</script>
+            
+         </div>
+         <a class="btn btn-default next" type="submit" href="" data-ng-click="goNext(2)" onclick="test()">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step3">
+        <div class="well"> 
+        <h1 class="ptitle">Pillar 2 - Content</h1>
+        <br>
+
+<div class="formdivs" id="pages">
+<h2>2.1 - Pages</h2>
+
+  <p>Does the website have an "About Us" page?</p>
+    <input type="radio" name="about" ng-model="aboutyes" value="2.11" required>Yes
+    <input type="radio" name="about" ng-model="aboutno" value="2.12">No
+        
+    <p>Does the website have a "FAQ" page?</p>
+    <input type="radio" name="FAQ" ng-model="FAQyes" value="2.13" required>Yes
+    <input type="radio" name="FAQ" ng-model="FAQno" value="2.14">No
+
+  <p>Does the website have a "Contact" page?</p>
+    <input type="radio" name="contact" ng-model="contactyes" value="2.15" required>Yes
+    <input type="radio" name="contact" ng-model="contactno" value="2.16">No
+        
+  <p>Does the website display a 404 Error page?</p>
+    <input type="radio" name="404" ng-model="errorpageyes" value="2.17" required>Yes
+    <input type="radio" name="404" ng-model="errorpageno" value="2.18">No
+</div>
+        
+
+<div class="formdivs" id="punctuationgrammar">
+<h2>2.2 - Punctuation & Grammar</h2>
+  
+    <p>Does the website have correct grammar and spelling?</p>
+    <input type="radio" name="proofread" ng-model="proofreadyes" value="2.21" required>Yes
+    <input type="radio" name="proofread" ng-model="proofreadno" value="2.22">No
+  <p class="caption">If unsure, please chck this tool to check for spelling or grammar errors: <a href="https://www.grammarly.com/?AT3383=2"  class="wrapplink">Grammarly Tool</a></p>
+  <p>
+  This tool is an extension for Chrome that allows you to quickly pick up spelling and over 250 grammar errors that may not be caught with quick revision.
+  </p>
+
+</div>
+
+
+<div class="formdivs" id="authenticity">
+<h2>2.3 - Authenticity</h2>
+
+  <p>Does the website provide documentation for any source?</p>
+    <input type="radio" name="citation" ng-model="citationsyes" value="2.31" required>Yes
+    <input type="radio" name="citation" ng-model="citationsno" value="2.32">No
+
+  <p>Is the content and information on the website accurate and current?</p>
+    <input type="radio" name="uptodate" ng-model="uptodateyes" value="2.33" required>Yes
+    <input type="radio" name="uptodate" ng-model="uptodateno" value="2.34">No
+
+  <p>Does the website provide informative news articles pertaining to the site?</p>
+    <input type="radio" name="article" ng-model="articlesyes" value="2.35" required>Yes
+    <input type="radio" name="article" ng-model="articlesno" value="2.36">No
+    <input type="radio" name="article" ng-model="articlesNA" value="2.35">Not Applicable
+
+  <p>Is the website transparent?</p>
+    <input type="radio" name="transparent" ng-model="transparentyes" value="2.37" required>Yes
+    <input type="radio" name="transparent" ng-model="transparentno" value="2.38">No
+    <p class="caption">If unsure, please check this 10-point Government Transparency <a href="https://ballotpedia.org/Transparency_checklist">checklist</a></p> 
+
+  <p>Is the website's mission statement relevant and accurate for the website's intended goal?</p>
+    <input type="radio" name="mission" ng-model="mission" value="2.39" required checked>Yes
+    <input type="radio" name="mission" ng-model="mission" value="2.301">No
+
+</div>
+
+
+<div class="formdivs" id="userfriendliness">
+<h2>2.4 - User Friendliness</h2>
+
+  <p>Does the website have hyperlinks instead of typing out the URL, also known as "meaningful links"?</p>
+    <input type="radio" name="hyperlinks" ng-model="hyperlinksyes" value="2.41" required>Yes
+    <input type="radio" name="hyperlinks" ng-model="hyperlinksno" value="2.42">No
+
+  <p>Does the website break up large amounts of text with multimedia?</p>
+    <input type="radio" name="breaktext" ng-model="breaktextyes" value="2.43" required>Yes
+    <input type="radio" name="breaktext" ng-model="breaktextno" value="2.44">No
+
+
+  <p>Is the end goal and purpose of the site clear to the user?</p>
+    <input type="radio" name="endgoal" ng-model="endgoalyes" value="2.45" required>Yes
+    <input type="radio" name="endgoal" ng-model="endgoalno" value="2.46">No
+
+</div>
+
+
+<div class="formdivs" id="contentmanagement">
+<h2>2.5 - Effective Content Management System (CMS)</h2>
+
+  <p>Does the website use a content maangement system?</p>
+    <input type="radio" name="CMS" ng-model="CMSyes" value="2.51" required>Yes
+        <input type="radio" name="CMS" ng-model="CMSno" value="2.52">No
+        <br><br>
+        <label class="lbl">If yes, please enter the name of it: <input type="text" ng-model="CMSother" placeholder=" Your CMS"></label>
+
+</div>
+
+        </div>
+         <a class="btn btn-default next" href="" data-ng-click="goNext(3)">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+
+      <div class="tab-pane fade" id="step4">
+        <div class="well">
+
+          <h1 class="ptitle">Pillar 3 - Navigation & Search</h1>
+
+
+<div class="formdivs" id="search">
+<h2>3.1 - Central or Global Search</h2>
+
+  <p>Does the website provide a search bar?</p>
+    <input type="radio" name="search" ng-model="searchyes" value="3.11" required>Yes
+    <input type="radio" name="search" ng-model="searchno" value="3.12">No
+
+  <p>If so, is the search bar visible and accessible on every page?</p>
+    <input type="radio" name="searchbar" ng-model="searchbaryes" value="3.13" required>Yes
+    <input type="radio" name="searchbar" ng-model="searchbarno" value="3.14">No
+       
+</div>
+
+
+<div class="formdivs" id="userpath">
+<h2>3.2 - Logical User Path</h2>
+
+  <p>Does the website have a logical user path (does it generally take less than 7 clicks for the user to achieve their intended use goal of the site?)</p>
+    <input type="radio" name="logical" ng-model="logicalyes" value="3.21" required>Yes
+    <input type="radio" name="logical" ng-model="logicalno" value="3.22">No
+  
+</div>
+
+
+<div class="formdivs" id="usefullinks">
+<h2>3.3 - Useful Links/Top Searches</h2>
+
+  <p>Does the website provide recommended additional links to the user if they cannot find their intended search?</p>
+    <input type="radio" name="recommended" ng-model="recommendedyes" value="3.31" required>Yes
+    <input type="radio" name="recommended" ng-model="recommendedno" value="3.32">No
+  
+    <p>Does the website show "top searches" for easy user access to frequently searched informaton?</p>
+    <input type="radio" name="topsearch" ng-model="searchyes" value="3.33" required>Yes
+    <input type="radio" name="topsearch" ng-model="searchno" value="3.34">No
+</div>
+
+
+<div class="formdivs" id="logohome">
+<h2>3.4 - Website Logo Home Link</h2>
+
+  <p>Does the website provide a clear website logo that links to the home page on every page of the website?</p>
+    <input type="radio" name="homelogo" ng-model="homelogoyes" value="3.41" required>Yes
+    <input type="radio" name="homelogo" ng-model="homelogono" value="3.42">No
+</div>
+
+
+        </div>
+         <a class="btn btn-default next" href="" data-ng-click="goNext(4)">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+       <div class="tab-pane fade" id="step5">
+        <div class="well"> 
+        <h1 class="ptitle">Pillar 4 - Personalization</h1>
+        <br>
+
+<div class="formdivs" id="geolocation">
+<h2>4.1 - Geolocation</h2>
+
+  <p>Does the website customize ads and suggest a path based on the user's location?</p>
+    <input type="radio" name="locationpath" ng-model="locationpathyes" value="4.11" required>Yes
+    <input type="radio" name="locationpath" ng-model="locationpathno" value="4.12">No
+
+  <p>Does the website tailor the information shown on the site based on the user's location?</p>
+    <input type="radio" name="locationinfo" ng-model="locationinfoyes" value="4.13" required>Yes
+    <input type="radio" name="locationinfo" ng-model="locationinfono" value="4.14">No
+
+</div>
+
+<div class="formdivs" id="account">
+<h2>4.2 - Account/User Profile</h2>
+
+  <p>Does the website have a profile that retains a user's personal information (e.g. e-mail, name, etc.)?</p>
+    <input type="radio" name="account" ng-model="accountyes" value="4.21" required>Yes
+    <input type="radio" name="account" ng-model="accountno" value="4.22">No
+    <input type="radio" name="account" ng-model="accountNA" value="4.21">Not Applicable
+
+  <p>If so, does it use security protocols for authentication and authorization?</p>
+    <input type="radio" name="authentication" ng-model="authenticationyes" required>Yes
+    <input type="radio" name="authentication" ng-model="authenticationno">No
+    <input type="radio" name="authentication" ng-model="authenticationNA">Not Applicable
+
+</div>
+
+<div class="formdivs" id="cookies">
+<h2>4.3 - Cookie Use/Active Recommendation</h2>
+
+  <p>Does the website use any type of cookies?</p>
+    <input type="radio" name="cookies" ng-model="cookiesyes" required>Yes
+    <input type="radio" name="cookies" ng-model="cookiesno">No
+        
+    <p>If so, are the cookies used to generate active recommendations? Does the website recommend next steps, links, or products based on cookies stored?</p>
+      <input type="radio" name="cookierecommend" ng-model="cookierecommendyes" value="4.31" required>Yes
+    <input type="radio" name="cookierecommend" ng-model="cookierecommendnno" value="4.32">No
+    <input type="radio" name="cookierecommend" ng-model="cookierecommendNA" value="4
+    33">Not Applicable
+
+</div>
+
+<div class="formdivs" id="autofill">
+<h2>4.4 - Autofill</h2>
+
+  <p>Does the website use type head or another type of autofill/predictive analytic?</p>
+    <input type="radio" name="autofill" ng-model="autofillyes" value="4.41" required>Yes
+    <input type="radio" name="autofill" ng-model="autofillno" value="4.42">No
+</div>
+
+<div class="formdivs" id="trackingprogress">
+<h2>4.5 - Tracking Progress/Abandonment</h2>
+
+  <p>Does the website have a tool that shows the user progress while in the form or in the shipment?</p>
+    <input type="radio" name="progress" ng-model="progressyes" value="4.51" required>Yes
+    <input type="radio" name="progress" ng-model="progressno" value="4.52">No
+    <input type="radio" name="progress" ng-model="progressNA" value="4.51">Not Applicable
+
+  <p>Does the website provide live tracking capabilities?</p>
+    <input type="radio" name="livetracking" ng-model="livetrackingyes" value="4.53" required>Yes
+    <input type="radio" name="livetracking" ng-model="livetrackingno" value="4.54">No
+    <input type="radio" name="livetracking" ng-model="livetrackingNA" value="4.53">Not Applicable
+
+</div>
+
+        </div>
+         <a class="btn btn-default next" href="" data-ng-click="goNext(5)">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step6">
+        <div class="well"> 
+
+        <h1 class="ptitle">Pillar 5 - Site Performance</h1>
+        <br>
+
+
+  <script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+  popupWindow = window.open(
+    url,'popUpWindow','height=300,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+}
+  </script>
+
+<div class="formdivs" id="sitespeed">
+<h2>5.1 - Speed of the Site</h2>
+
+  <p>Is CSS and javascript minified?</p>
+    <input type="radio" name="CSS" ng-model="CSSyes" value="5.11" required>Yes
+    <input type="radio" name="CSS" ng-model="CSSno" value="5.12">No
+
+  <p>Are the files reduced to smaller sizes?</p>
+    <input type="radio" name="reduced" ng-model="reducedyes" value="5.13" required>Yes
+    <input type="radio" name="reduced" ng-model="reducedno" value="5.14">No
+
+  <p>Does your website operate at a speed that is reasonable and satisfactory for the user?</p>
+    <input type="radio" name="reasonablespeed" ng-model="reasonableyes" value="5.15" required>Yes
+    <input type="radio" name="reasonablespeed" ng-model="reasonableno" value="5.16">No
+    <p class="caption">If unsure, please use <a href="https://developers.google.com/speed/docs/insights/about" class="wrapplink">"Pagespeed Insights"</a>, a tool that measures the performance of both your desktop and mobile site in terms of speed.</p>
+
+</div>
+
+<div class="formdivs" id="loadtime">
+<h2>5.2 - Load Time of Media</h2>
+
+  <p>Is there lag for mutltimedia load?</p>
+    <input type="radio" name="loadtime" ng-model="loadtimeyes" value="5.21" required>Yes
+    <input type="radio" name="loadtime" ng-model="loadtimeno" value="5.22">No
+
+</div>
+
+<div class="formdivs" id="datacollection">
+<h2>5.3 - Data Collection</h2>
+
+  <p>Does the website collect and store data/analytics?</p>
+    <input type="radio" name="collectdata" ng-model="collectdatayes" value="5.31" required>Yes
+    <input type="radio" name="collectdata" ng-model="collectdatano" value="5.32">No
+
+  <p>Is the stored data easily accessible and updated frequently?</p>
+    <input type="radio" name="accessdata" ng-model="accessdatayes" value="5.33" required>Yes
+    <input type="radio" name="accessdata" ng-model="accessdatano" value="5.34">No
+
+</div>
+
+<div class="formdivs" id="brokenlinks">
+<h2>5.4 - Broken Links</h2>
+
+  <p>Does the website have active and functioning links?</p>
+    <input type="radio" name="activelinks" ng-model="activelinksyes" value="5.41" required>Yes
+    <input type="radio" name="activelinks" ng-model="activelinksno" value="5.42">No
+    <p class="caption">If unsure, please use the following <a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf?hl=en-GB" class="wrapplink">"Check My Links"</a> tool.</p>
+    <caption>The "Check My Links" tool is a link checker that crawls through your webpage and looks for broken links.</caption>
+
+</div>
+
+<div class="formdivs" id="SEO">
+<h2>5.5 - Search Engine Optimization (SEO)</h2>
+<p><a href="JavaScript:newPopup('SEOAbstract.html');">SEO Definition</a></p>
+
+  <p>Does the website include key words that allow the user to find the site easily? (2-4 keyword search terms)</p>
+    <input type="radio" name="seo" ng-model="seoyes" value="5.51" required>Yes
+    <input type="radio" name="seo" ng-model="seono" value="5.52">No
+        <p>If desired, please use google analytics to </p>
+
+</div>
+
+        </div>
+         <a class="btn btn-default next" href="" data-ng-click="goNext(6)">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+
+
+       <div class="tab-pane fade" id="step7">
+        <div class="well">
+          <h1 class="ptitle">Pillar 6 - Social Interaction</h1>
+          <br>
+
+<div class="formdivs" id="Feedback">
+<h2>6.1 - Feedback Option</h2>
+
+  <p>Does the website have a feedback section so that the user can give comments or suggestions about the website?</p>
+    <input type="radio" name="feedback" ng-model="feedbackyes" value="6.11" required>Yes
+    <input type="radio" name="feedback" ng-model="feedbackno" value="6.12">No
+
+</div>
+
+<div class="formdivs" id="listserve">
+<h2>6.2 - Subscribe/List Serve</h2>
+
+  <p>Does the website have a subscription or list serve to reach its audience?</p>
+    <input type="radio" name="listserve" ng-model="listserveyes" value="6.21" required>Yes
+    <input type="radio" name="listserve" ng-model="listserveno" value="6.22">No
+</div>
+
+<div class="formdivs" id="socialmedia">
+<h2>6.3 - Social Media Presence/Links</h2>
+
+  <p>Does the website have social media presence on a variety of suitable platforms (Facebook, Instagram, Twitter etc.)?</p>
+    <input type="radio" name="socialmedia" ng-model="socialmediayes" value="6.31" required>Yes
+    <input type="radio" name="socialmedia" ng-model="socialmediano" value="6.32">No
+
+  <p>Are there visible links to the site's social media accounts?</p>
+    <input type="radio" name="socialmedia" ng-model="sociallinkyes" value="6.33" required>Yes
+    <input type="radio" name="socialmedia" ng-model="sociallinkno" value="6.34">No
+
+</div>
+
+<div class="formdivs" id="confirmation">
+<h2>6.4 - Confirmation/Notifications</h2>
+
+  <p>Does the website provide a confirmation page at the end of a form that alerts the user that their information was completed and/or received?</p>
+    <input type="radio" name="confirm" ng-model="confirmyes" value="6.41" required>Yes
+    <input type="radio" name="confirm" ng-model="confirmno" value="6.42">No
+        <input type="radio" name="confirm" ng-model="confirmNA" value="6.43">Not Applicable 
+
+</div>
+
+<div class="formdivs" id="livechat">
+<h2>6.5 - Live Chat</h2>
+
+<p>Is there a help button or live chat feature that lets users interact with someone for any questions or concerns?</p>
+    <input type="radio" name="livechat" ng-model="livechatyes" value="6.51" required>Yes
+    <input type="radio" name="livechat" ng-model="livechatno" value="6.52">No
+
+</div>
+
+
+<div class="formdivs" id="forums">
+<h2>6.6 - Forums</h2>
+
+<p>Are there community boards or instant chat features for user base interaction?</p>
+    <input type="radio" name="forums" ng-model="forumsyes" value="6.61" required>Yes
+    <input type="radio" name="forums" ng-model="forumsno" value="6.62">No
+
+</div>
+
+
+        </div>
+         <a class="btn btn-default next" href="" data-ng-click="goNext(7)">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step8">
+        <div class="well">
+          <h1 class="ptitle">Pillar 7 - Security & Privacy</h1>
+          <br>
+
+    <script type="text/javascript">
+// Popup window code
+function newPopup(url) {
+  popupWindow = window.open(
+    url,'popUpWindow','height=300,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+}
+  </script>
+
+<div class="formdivs" id="governmentregulations">
+<h2>7.1 - Government Regulations</h2>
+
+  <p>Does the website comply with federal privacy/security regulations both domestically and internationally?.</p>
+    <p>NIST 800-53 (Appendix J)?</p>
+    <input type="radio" name="800-122" ng-model="fedprivacyyes" value="7.11" required>Yes
+    <input type="radio" name="800-122" ng-model="fedprivacyno" value="7.12">No
+    <p class="caption">If unsure, please refer to <a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf" class="wrapplink">NIST 800-53 guidelines</a></p>
+
+  <br>
+  <p>
+  NIST 800-53 (Appendix J), "Security and Privacy Controls for Federal Information Systems and Organizations," provides a catalog of security controls for all U.S. federal information systems except those related to national security.
+  </p>
+        
+    <p>NIST 800-122?</p>
+    <input type="radio" name="800-122" ng-model="fedISOyes" value="7.13" required>Yes
+    <input type="radio" name="800-122" ng-model="fedISOno" value="7.14">No
+    <p class="caption">If unsure, please refer to <a href="http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-122.pdf" class="wrapplink">NIST 800-122 guidelines</a></p>
+
+<br>
+<p>
+NIST 800-122, "Guide to Protecting the Confidentiality of Personally Identifiable Information," provides agencies with guidelines for a risk-based approach to protecting the confidentiality of personally identifiable information (PII). 
+
+<p>
+  <p>Privacy Act of 1974?</p>
+    <input type="radio" name="privacyact" ng-model="privacyactyes" value="7.15" required>Yes
+    <input type="radio" name="privacyact" ng-model="privacyactno" value="7.16">No
+    <p class="caption">If unsure, please refer to <a href="https://www.gpo.gov/fdsys/pkg/USCODE-2012-title5/pdf/USCODE-2012-title5-partI-chap5-subchapII-sec552a.pdf" class="wrapplink"> Privacy Act of 1974</a></p>
+
+<br>
+<p>
+The Privacy Act of 1974 establishes a code of fair information practices that governs the collection, maintenance, use, and dissemination of information about individuals that is maintained in systems of records by federal agencies.
+
+<p>
+
+  <p>Paperwork Reduction Act (1995)?</p>
+    <input type="radio" name="paperwork" ng-model="paperworkyes" value="7.17" required>Yes
+    <input type="radio" name="paperwork" ng-model="paperworkno" value="7.18">No
+    <p class="caption">If unsure, please refer to <a href="http://www.hhs.gov/ocio/policy/collection/" class="wrapplink"> Paperwork Reduction Act</a></p>
+
+<br>
+<p>
+The Paperwork Reduction Act (1995) requires that agencies obtain Office of Management and Budget (OMB) approval before requesting most types of information from the public.
+<p>
+
+  <p>E-Government Act of 2002?</p>
+    <input type="radio" name="egovernment" ng-model="egovernmentyes" value="7.19" required>Yes
+    <input type="radio" name="egovernment" ng-model="egovernmentno" value="7.191">No
+    <p class="caption">If unsure, please refer to <a href="https://www.gpo.gov/fdsys/pkg/STATUTE-116/pdf/STATUTE-116-Pg2899.pdf" class="wrapplink">E-Government Act of 2002</a></p>
+
+<br>
+<p>
+The E-Government Act of 2002 is a statute whose purpose is to improve the management and promotion of electronic government services and processes by establishing a framework of measures that require using Internet-based information technology to improve citizen access to government information and services.
+<p>
+ 
+  <p>Office of Management & Budget (OMB)?</p>
+    <input type="radio" name="OMB" ng-model="OMByes" value="7.192" required>Yes
+    <input type="radio" name="OMB" ng-model="OMBno" value="7.193">No
+    <p class="caption">If unsure, please refer to <a href="https://www.whitehouse.gov/omb/privacy_general" class="wrapplink">OMB</a></p>
+
+<br>
+<p>
+ The OMB details multiple guidelines regarding privacy and inter-agency sharing of personal data.
+<p>
+
+  <p>Children's Online Privacy Protection Act (COPPA)?</p>
+    <input type="radio" name="COPPA" ng-model="COPPAyes" value="7.194" required>Yes
+    <input type="radio" name="COPPA" ng-model="COPPAno" value="7.195">No
+    <p class="caption">If unsure, please refer to <a href="https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule" class="wrapplink">COPPA</a></p>
+
+<br>
+<p>
+COPPA is a law created to protect the privacy of children under 13.
+<p>
+
+</div>
+
+<div class="formdivs" id="securityteam">
+<h2>7.2 - Security Team</h2>
+
+  <p>Is there staff to update protocols and scan for vulnerabilities?</p>
+    <input type="radio" name="security" ng-model="securityyes" value="7.21" required>Yes
+    <input type="radio" name="security" ng-model="securityno" value="7.22">No
+  
+    <p>Does the staff frequently check for threats and update the system?</p>
+    <input type="radio" name="checkthreat" ng-model="checkthreatsyes" value="7.23" required>Yes
+    <input type="radio" name="checkthreat" ng-model="checkthreatsno" value="7.24">No
+
+  <p>Does the staff establish risk tests and protocols to mitigate risk?</p>
+    <input type="radio" name="risktest" ng-model="risktestsyes" value="7.25" required>Yes
+    <input type="radio" name="risktest" ng-model="risktestsno" value="7.26">No
+
+  <p>Does the staff analyze the privacy practices of the website and if the user information is appropriately secure?</p>
+    <input type="radio" name="infosecure" ng-model="infosecureyes" value="7.27" required>Yes
+    <input type="radio" name="infosecure" ng-model="infosecureno" value="7.28">No
+
+  <p>Does the staff review preventative security protocols to stop Distributed Denial of Service (DDOS)?</p>
+    <input type="radio" name="DDOS" ng-model="DDOSyes" value="7.29" required>Yes
+    <input type="radio" name="DDOS" ng-model="DDOSno" value="7.291">No
+
+<p>***********<a href="JavaScript:newPopup('P2.html');">Open a popup window</a></p>
+
+
+</div>
+
+<div class="formdivs" id="authorization">
+<h2>7.3 - Authorization & Authentication</h2>
+
+  <p>Does the website have an appropriate framework in place for authorization and authentication if it collects Personal Identifiable Information (PII)?</p>
+    <input type="radio" name="PII" ng-model="PIIyes" value="7.31" required>Yes
+    <input type="radio" name="PII" ng-model="PIIno" value="7.32">No
+  <p class="caption">For a definition of what is considered Personal Identifiable Information, please reference the <a href="http://csrc.nist.gov/publications/nistpubs/800-122/sp800-122.pdf">NIST 800-122 guidelines</a></p>
+
+  <p>Is the website continually maintaining user PII and allowing user choice (option to unsubscribe)?</p>
+    <input type="radio" name="unsubscribe" ng-model="unsubscribeyes" value="7.33" required>Yes
+    <input type="radio" name="unsubscribe" ng-model="unsubscribeno" value="7.34">No
+
+</div>
+
+<div class="formdivs" id="securedata">
+<h2>7.4 - Secure Data/Information</h2>
+
+  <p> Are the users automatically opted in to data collection, or can they opt out upfront?</p>
+    <input type="radio" name="optout" ng-model="optoutyes" value="7.41" required>Yes
+    <input type="radio" name="optout" ng-model="optoutno" value="7.42">No
+
+  <p>Does your website connect with a secure socket layer for HTTPS?</p>
+    <input type="radio" name="HTTPS" ng-model="HTTPSyes" value="7.43" required>Yes
+    <input type="radio" name="HTTPS" ng-model="HTTPSno" value="7.44">No
+
+  <p>If used internationally,does the website comply with international guidelines?</p>
+    <input type="radio" name="international" ng-model="internationalyes" value="7.45" required>Yes
+    <input type="radio" name="international" ng-model="internationalno" value="7.46">No
+        <input type="radio" name="international" ng-model="internationalNA" value="7.45">Not Applicable
+  <p>
+  <ul>Please refer to the following for common examples:
+       <span  class="caption"><li>Asia Pacific (APAC)</li>
+      <li><a href="http://www.ema.europa.eu/docs/en_GB/document_library/Other/2010/01/WC500070046.pdf">Europe (EMEA) Regulations</a></li>
+      <li>Americas</li></span>
+  </ul></p>
+</div>
+
+        </div>
+         <a class="btn btn-default next" href="" data-ng-click="goNext(8)">Continue</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+       <div class="tab-pane fade" id="step9">
+        <div class="well">
+          <h1 class="ptitle">Pillar 8 - Aesthetics</h1>
+          <br>
+
+<div class="formdivs" id="designteam">
+<h2>8.1 - Internal Design Team</h2>
+
+  <p>Is there staff monitoring & maintaining current design trends?</p>
+    <input type="radio" name="team" ng-model="teamyes" value="8.11" required>Yes
+    <input type="radio" name="team" ng-model="teamno" value="8.12">No
+
+  <p>Does the team use web analytics/feedback to continuously improrequiredve the site?</p>
+    <input type="radio" name="webdata" ng-model="webdatayes" value="8.13" required>Yes
+    <input type="radio" name="webdata" ng-model="webdatano" value="8.14">No
+
+</div>
+
+<div class="formdivs" id="orglayout">
+<h2>8.2 - Organizational Layout</h2>
+
+  <p>Is the main call to action (e.g. "Get Started" button) presented immediately?</p>
+    <input type="radio" name="action" ng-model="actionyes" value="8.21" required>Yes
+    <input type="radio" name="action" ng-model="actionno" value="8.22">No
+        
+    <p>Is the menu bar and contact information visible on every page?</p>
+    <input type="radio" name="visible" ng-model="visibleyes" value="8.23" required>Yes
+    <input type="radio" name="visible" ng-model="visibleno" value="8.24">No
+        
+    <p>Do the subsequent pages on the website follow a consistent design?</p>
+    <input type="radio" name="condesign" ng-model="condesignyes" value="8.25" required>Yes
+    <input type="radio" name="condesign" ng-model="condesignno" value="8.26">No
+        
+    <p>Are the buttons a consistent color, style, shape or texture?</p>
+    <input type="radio" name="concolor" ng-model="concoloryes" value="8.27" required>Yes
+    <input type="radio" name="concolor" ng-model="concolorno" value="8.28">No
+        
+    <p>Does the website implement flat, minimalist design?</p>
+    <input type="radio" name="typedesign" ng-model="typedesignyes" value="8.29" required>Yes
+    <input type="radio" name="typedesign" ng-model="typedesignno" value="8.291">No
+        
+    <p>Does the website implement a hamburger menu that provides intuitive user navigation?</p>
+    <input type="radio" name="hamburger" ng-model="hamburgeryes" value="8.292" required>Yes
+    <input type="radio" name="hamburger" ng-model="hamburgerno" value="8.293">No
+    
+</div>
+
+<div class="formdivs" id="colorfont">
+<h2>8.3 - Color & Font</h2>
+
+  <p>Do the pages have consistent and simple typography?</p>
+    <input type="radio" name="contypo" ng-model="contypoyes" value="8.31" required>Yes
+    <input type="radio" name="contypo" ng-model="contypono" value="8.32" required>No
+        
+    <p>Is the font size and color suitable to the targeted user base?</p>
+    <input type="radio" name="targetfont" ng-model="targetfontyes" value="8.33" required>Yes
+    <input type="radio" name="targetfont" ng-model="targetfontno" value="8.34">No
+        
+    <p>Are the colors and text used on the website in compliance with the WCAG AA 2.0 guidelines?</p>
+    <input type="radio" name="WCAG" ng-model="WCAGyes" value="8.35" required>Yes
+    <input type="radio" name="WCAG" ng-model="WCAGno" value="8.36">No
+  <p>If unsure, please reference the guidelines <a href="https://www.w3.org/WAI/WCAG20/quickref/#visual-audio-contrast-scale">here</a></p>
+        
+    <p>Does the website display large headings and options for "Further Reading" or "Read More" for large amounts of text?</p>
+    <input type="radio" name="readmore" ng-model="readmoreyes" value="8.37" required>Yes
+    <input type="radio" name="readmore" ng-model="readmoreno" value="8.38">No
+</div>
+
+<div class="formdivs" id="websitemedia">
+<h2>8.4 - Website Multimedia</h2>
+
+  <p>Does the website display custom, HD images as opposed to stock images?</p>
+    <input type="radio" name="customimages" ng-model="customimagesyes" value="8.41" required>Yes
+    <input type="radio" name="customimages" ng-model="customimagesno" value="8.42"> requiredNo
+
+  <p>Does the website have a loading page animation?</p>
+    <input type="radio" name="loading" ng-model="loadingyes" value="8.43" required>Yes
+    <input type="radio" name="loading" ng-model="loadingno" value="8.44">No
+
+  <p>Does the website use hover animation?</p>
+    <input type="radio" name="hover" ng-model="hoveryes" value="8.45" required>Yes
+    <input type="radio" name="hover" ng-model="hoverno" value="8.46">No
+      
+<riv cl requiredass="formdivs" id="parallaxscrolling">
+<h2>8.5 - Parallax Scrolling</h2>
+
+  <p>Does the website employ parallax scrolling?</p>
+    <input type="radio" name="parallax" ng-model="parallaxyes" value="8.51" required>Yes
+    <input type="radio" name="parallax" ng-model="parallaxno" value="8.52">No
+
+</div>
+
+        </div>
+         <a class="btn btn-primary" type="submit" href="" data-ng-click="goNext(9)">Submit</a>
+          <img src="wrapplogo.png" alt="WRAPP Logo" id="wrapplogo">
+<img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" id="boozlogo">
+      </div>
+
+
+      <div class="tab-pane fade" id="step10">
+        <div class="well"> 
+            <div id="report">
+<section class="the-report"> <!--for demo wrap-->
+
+
+          <h1 class="heads">Your Score Card is Complete! Here are your results:</h1>  
+<table cellpadding="0" cellspacing="0" border="0">
+  <thead>
+    <tr>
+      <td colspan="3" id="overall">Overall Score:</td>
+      <td id="score">56%</td>
+    <tr>
+      <th>Pillar</th>
+      <th>Sub-Pillar</th>
+      <th>% Weight</th>
+      <th>Scores</th>
+    </tr>
+    <tr>
+    <div class="pdiv">
+      <td rowspan="4" class="pillar">P1. Accessibility</td>
+      <td>1.1 Responsiveness</td>
+      <td>50%</td>
+      <td rowspan="4" class="score">68%</td>
+    </tr>
+    <tr>
+      <td>1.2 Multinational</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>1.3 Browser Compatibility</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>1.4 508 Compliance</td>
+      <td>35%</td>
+    </tr>
+    <tr>
+    <td rowspan="5" class="pillar">P2. Content</td>
+      <td>2.1 Pages</td>
+      <td>15%</td>
+      <td rowspan="5" class="score">72%</td>
+    </tr>
+    <tr>
+      <td>2.2 Punctuation & Grammar</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>2.3 Authenticity</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>2.4 User Friendliness</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>2.5 Effective Content Management System (CMS)</td>
+      <td>30%</td>
+    </tr>
+    <tr>
+    <td rowspan="4" class="pillar">P3. Navigation & Search</td>
+      <td>3.1 Central or Global Search</td>
+      <td>40%</td>
+      <td rowspan="4" class="score">72%</td>
+    </tr>
+    <tr>
+      <td>3.2 Logical User Path</td>
+      <td>40%</td>
+    </tr>
+    <tr>
+      <td>3.3 Useful Links/Top Searches</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>Website Logo Home Link</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+    <td rowspan="5" class="pillar">P4. Personalization</td>
+      <td>4.1 Geolocation</td>
+      <td>20%</td>
+      <td rowspan="5" class="score">32%</td>
+    </tr>
+    <tr>
+      <td>4.2 Account/User Profile</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>4.3 Cookie Use/Active Reccomendation</td>
+      <td>30%</td>
+    </tr>
+    <tr>
+      <td>Autofill</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>Tracking Progress/Abandonment</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+    <td rowspan="5" class="pillar">P5. Site Performance</td>
+      <td>5.1 Speed of the Site</td>
+      <td>20%</td>
+      <td rowspan="5" class="score">75%</td>
+    </tr>
+    <tr>
+      <td>5.2 Load Time of Media</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>5.3 Data Collection</td>
+      <td>35%</td>
+    </tr>
+    <tr>
+      <td>5.4 Broken Links</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>5.5 Search Engine Optimization</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+    <td rowspan="6" class="pillar">P6. Social Interaction</td>
+      <td>6.1 Feedback Option</td>
+      <td>25%</td>
+      <td rowspan="6" class="score">63%</td>
+    </tr>
+    <tr>
+      <td>6.2 Subscribe/List Serve</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>6.3 Social Media Presence/Links</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>6.4 Confirmation/Notifications</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>6.5 Live Chat</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>6.6 Forums</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+    <td rowspan="4" class="pillar">P7. Security & Privacy</td>
+      <td>7.1 Government Regulations</td>
+      <td>35%</td>
+      <td rowspan="4" class="score">57%</td>
+    </tr>
+    <tr>
+      <td>7.2 Security Team</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>7.3 Authorization & Authentication</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>7.4 Secure Data/Information</td>
+      <td>30%</td>
+    </tr><tr>
+    <td rowspan="5" class="pillar">P8. Aesthetics</td>
+      <td>8.1 Internal Design Team</td>
+      <td>20%</td>
+      <td rowspan="5" class="score">62%</td>
+    </tr>
+    <tr>
+      <td>8.2 Organizational Layout</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>8.3 Color & Font</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>8.4 Website Multimedia</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>8.5 Parallax Scrolling</td>
+      <td>15%</td>
+    </tr>
+    </div>
+
+  </thead>
+  </table>
+</tr>
+</section>
+</div>
+<br><br><br><br>
+<div id="alist">
+<section class="activelist">
+<div  class="tbl-norm">
+<table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+    <tr>
+      <th class="tbl-empty"></th>
+      <th class="tbl-empty"></th>
+      <td colspan="9" id="tbl-title">Scores</td>
+    </tr>
+    </thead>
+    </table>
+    </div>
+    <div  class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+    <tr>
+      <th class="wide">Name</th>
+      <th class="wide">URL</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th>OS</th>
+    </tr>
+  </thead>
+</table>
+</div>
+<div  class="tbl-content">
+<table cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+    <tr>
+      <td class="wide">IRS</td>
+      <td class="wide"><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr>
+    <tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td>IRS</td>
+      <td><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr>
+  </tbody>
+</table>
+<caption>OS stands for "Overall Score"</caption>
+</div>
+</section>
+</div>
+        </div>
+         <a class="btn btn-success first" href="" data-ng-click="goNext(0)">Start over</a>
+      </div>
+   </div>
+  
+
+  
+</div>
+
+
+
+        
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+
+     
+      <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+
+        
+        <!-- JavaScript jQuery code from Bootply.com editor  -->
+        
+        <script type='text/javascript'>
+        
+            var myApp = angular.module('myApp', []);
+function Main($scope, $http){
+  var i = 1;
+  $scope.goNext = function(i){
+  $('[href=#step'+(i+1)+']').tab('show');
+  
+    return false;
+    
+  }
+  
+}
+(function($){
+
+$(document).ready(function() {
+
+  // use jQuery to update progress bar
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    
+    //update progress
+    var step = $(e.target).data('step');
+    var percent = (parseInt(step) / 10) * 100;
+    
+    $('.progress-bar').css({width: percent + '%'});
+    $('.progress-bar').text("Step " + step + " of 10");
+    
+  });
+
+});
+
+  
+})(jQuery);      
+
+        </script>
+        
+    
+        
+        
+    </body>
+</html>
